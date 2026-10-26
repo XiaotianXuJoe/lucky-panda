@@ -1,0 +1,66 @@
+{
+ "intro-1": [
+  "intro-1"
+ ],
+ "intro-2": [
+  "intro-2"
+ ],
+ "intro-3": [
+  "intro-3"
+ ],
+ "intro-4": [
+  "intro-4"
+ ],
+ "intro-5": [
+  "intro-5"
+ ],
+ "story1-1": "story1-1-n{c1}",
+ "story1-2": [
+  "story1-2"
+ ],
+ "story1-3": [
+  "story1-3"
+ ],
+ "story1-4": [
+  "story1-4"
+ ],
+ "story2-1": "story2-1-c{c2}t{total}",
+ "story2-2": [
+  "story2-2"
+ ],
+ "story2-3": [
+  "story2-3"
+ ],
+ "story2-4": [
+  "story2-4"
+ ],
+ "ending-1": "ending-1-n{total}",
+ "ending-2": [
+  "ending-2"
+ ],
+ "ending-3": [
+  "ending-3"
+ ],
+ "ending-4": [
+  "ending-4"
+ ],
+ "tutorial-jump": [
+  "tut-jump-1",
+  "tut-jump-2",
+  "tut-jump-3",
+  "tut-jump-4",
+  "tut-jump-5"
+ ],
+ "tutorial-memory": [
+  "tut-memory-1",
+  "tut-memory-2",
+  "tut-memory-3",
+  "tut-memory-4",
+  "tut-memory-5"
+ ],
+ "tutorial-sokoban": [
+  "tut-sokoban-1",
+  "tut-sokoban-2",
+  "tut-sokoban-3"
+ ]
+}

@@ -1,0 +1,111 @@
+/* 幸運熊貓 · /test 測試臺樣式（需求8，界面視覺規格 §3）
+ * 成人技術颱風格，與兒童端區分：中性灰底 + 石板藍灰強調，綠只作狀態點綴。
+ * 復用 /css/style.css 變量（--line 等），零新依賴、零外鏈字體/圖片。 */
+
+:root {
+  --test-ink: #2b3440;
+  --test-ink-hover: #1f2731;
+  --test-bg: #f3f5f7;
+  --test-hover: #eef1f4;
+  --test-disabled: #9aa3ad;
+  --test-disabled-bg: #f4f5f7;
+}
+
+body { background: var(--test-bg); font-size: 14px; }
+
+/* ---------- slim bar（h52，白底，底邊 1px） ---------- */
+.test-bar {
+  height: 52px;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.test-bar__title { font-weight: 700; font-size: 15px; color: var(--test-ink); }
+.test-bar__back {
+  color: var(--test-ink); font-size: 14px; text-decoration: none;
+  min-height: 44px; display: inline-flex; align-items: center; padding: 0 8px;
+}
+.test-bar__back:hover { text-decoration: underline; }
+
+/* ---------- 居中面板（max 520，padding 26，圓角 8，白底陰影） ---------- */
+.test-panel {
+  max-width: 520px;
+  margin: 48px auto;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 26px;
+  box-shadow: 0 2px 10px rgba(43, 52, 64, .08);
+}
+.test-panel h1 { font-size: 18px; margin: 0 0 4px; color: var(--test-ink); }
+.test-cap { font-size: 13px; color: #5d6f66; margin: 0 0 20px; }
+.test-label { display: block; font-size: 13px; font-weight: 600; color: var(--test-ink); margin: 16px 0 8px; }
+.test-label .test-opt { font-weight: 400; color: #5d6f66; }
+
+/* ---------- 分段控制項（階段三選一 / 關卡五選一） ---------- */
+.test-seg {
+  display: flex;
+  border: 1px solid var(--test-ink);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.test-seg__item {
+  flex: 1;
+  min-width: 96px;
+  min-height: 44px;
+  padding: 0 18px;
+  border: none;
+  border-right: 1px solid var(--test-ink);
+  background: #fff;
+  color: var(--test-ink);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.test-seg__item:last-child { border-right: none; }
+.test-seg__item:hover { background: var(--test-hover); }
+.test-seg__item:focus-visible { outline: 2px solid var(--test-ink); outline-offset: 2px; }
+.test-seg__item:disabled { color: var(--test-disabled); background: var(--test-disabled-bg); cursor: not-allowed; }
+/* 選中態：底 #2b3440 字 #fff + 前置 ●（不只靠顏色區分） */
+.test-seg__item.on { background: var(--test-ink); color: #fff; }
+.test-seg__item.on::before { content: '● '; font-size: 10px; vertical-align: 2px; }
+
+/* ---------- 按鈕行 ---------- */
+.test-actions { display: flex; gap: 12px; margin-top: 26px; }
+.test-btn-primary {
+  height: 44px;
+  padding: 0 24px;
+  border: none;
+  border-radius: 8px;
+  background: var(--test-ink);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  flex: 1;
+}
+.test-btn-primary:hover { background: var(--test-ink-hover); }
+.test-btn-primary:active { transform: translateY(1px); }
+.test-btn-primary:disabled { background: #a8b0b8; cursor: not-allowed; }
+.test-btn-ghost {
+  height: 44px;
+  padding: 0 24px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid var(--test-ink);
+  color: var(--test-ink);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.test-btn-ghost:hover { background: var(--test-hover); text-decoration: none; }
+
+.test-note { font-size: 12px; color: #5d6f66; margin: 18px 0 0; text-align: center; }

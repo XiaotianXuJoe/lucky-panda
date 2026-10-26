@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>幸運熊貓 · 測試臺</title>
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/test/css/test.css">
+</head>
+<body>
+
+<!-- slim bar -->
+<div class="test-bar">
+  <span class="test-bar__title">幸運熊貓 · 測試臺</span>
+  <a class="test-bar__back" href="/">← 返回玩家端</a>
+</div>
+
+<!-- 居中面板 -->
+<div class="test-panel">
+  <h1>訓練測試臺</h1>
+  <p class="test-cap">選擇階段與起始關卡後進入</p>
+
+  <span class="test-label" id="stageLabel">階段</span>
+  <div class="test-seg" role="group" aria-labelledby="stageLabel" id="stageSeg">
+    <button type="button" class="test-seg__item" data-stage="1" aria-pressed="false">① 跳躍水晶</button>
+    <button type="button" class="test-seg__item" data-stage="2" aria-pressed="false">② 記憶翻牌</button>
+    <button type="button" class="test-seg__item" data-stage="3" aria-pressed="false">③ 推箱子</button>
+  </div>
+
+  <span class="test-label" id="levelLabel">起始關卡 <span class="test-opt">（可選，默認第 1 關）</span></span>
+  <div class="test-seg" role="group" aria-labelledby="levelLabel" id="levelSeg">
+    <button type="button" class="test-seg__item" data-level="1" aria-pressed="false">1</button>
+    <button type="button" class="test-seg__item" data-level="2" aria-pressed="false">2</button>
+    <button type="button" class="test-seg__item" data-level="3" aria-pressed="false">3</button>
+    <button type="button" class="test-seg__item" data-level="4" aria-pressed="false">4</button>
+    <button type="button" class="test-seg__item" data-level="5" aria-pressed="false">5</button>
+  </div>
+
+  <div class="test-actions">
+    <button type="button" class="test-btn-primary" id="btnEnter" disabled>進入訓練</button>
+    <a class="test-btn-ghost" href="/">返回玩家端</a>
+  </div>
+
+  <p class="test-note">註：僅供研發測試，不記錄正式成績</p>
+</div>
+
+<script>
+(function () {
+  'use strict'
+  var stage = 0  // 必選，未選時進入按鈕禁用
+  var level = 0  // 可選，0 = 默認第 1 關（再點已選項可取消）
+
+  var stageSeg = document.getElementById('stageSeg')
+  var levelSeg = document.getElementById('levelSeg')
+  var btnEnter = document.getElementById('btnEnter')
+
+  function pick(seg, attr, exclusive) {
+    seg.addEventListener('click', function (e) {
+      var btn = e.target.closest('.test-seg__item')
+      if (!btn) return
+      var v = Number(btn.getAttribute(attr))
+      var wasOn = btn.classList.contains('on')
+      seg.querySelectorAll('.test-seg__item').forEach(function (b) {
+        b.classList.remove('on')
+        b.setAttribute('aria-pressed', 'false')
+      })
+      if (!wasOn || exclusive) {
+        btn.classList.add('on')
+        btn.setAttribute('aria-pressed', 'true')
+      }
+      if (seg === stageSeg) stage = wasOn && !exclusive ? 0 : v
+      else level = wasOn ? 0 : v
+      btnEnter.disabled = !stage
+    })
+  }
+  pick(stageSeg, 'data-stage', false)
+  pick(levelSeg, 'data-level', false)
+
+  btnEnter.addEventListener('click', function () {
+    if (!stage) return
+    location.href = '/play/?mode=test&stage=' + stage + '&level=' + (level || 1)
+  })
+})()
+</script>
+</body>
+</html>

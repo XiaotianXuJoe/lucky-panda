@@ -1,0 +1,144 @@
+/* 幸運熊貓 · 遊戲頁（熊貓陪伴動畫 / 觸屏按鍵） */
+
+.touch-pad {
+  position: absolute;
+  left: 18px; bottom: 18px;
+  z-index: 20;
+  display: flex; flex-wrap: wrap; gap: 10px;
+  max-width: 220px;
+}
+.touch-pad:empty { display: none; }
+.tbtn {
+  width: 62px; height: 62px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.35);
+  background: rgba(255,255,255,.16);
+  color: #fff; font-size: 24px; font-weight: 700;
+  font-family: inherit; cursor: pointer;
+  backdrop-filter: blur(4px);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: none;
+  user-select: none;
+}
+.tbtn:active { background: rgba(255,255,255,.34); }
+.tbtn.wide { width: 134px; font-size: 20px; }
+
+/* ---------- 熊貓陪伴 ---------- */
+/* 照片卡式位圖（panda-pose-wave.jpeg），整幀變換：呼吸 / 伸懶腰 / 打哈欠 / 眨眼 / 招手 / 點頭 */
+#panda { transform-origin: 50% 68%; will-change: transform; animation: pIdle 3.6s ease-in-out infinite; }
+
+/* 常駐呼吸：讓陪伴熊貓一直「活著」 */
+@keyframes pIdle {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-1.5px) scale(1.008); }
+}
+
+/* 伸懶腰：整體拉伸 + 上抬 */
+#panda.stretch { animation: pStretch 3.2s ease-in-out; }
+@keyframes pStretch {
+  0%, 100% { transform: translateY(0) scale(1, 1); }
+  40% { transform: translateY(-6px) scale(.98, 1.04); }
+  70% { transform: translateY(2px) scale(1.02, .98); }
+}
+
+/* 打哈欠：歪頭 + 輕微放大（慵懶感） */
+#panda.yawn { animation: pYawn 3.2s ease-in-out; }
+@keyframes pYawn {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  35% { transform: rotate(-4deg) scale(1.03); }
+  70% { transform: rotate(-1.5deg) scale(1.01); }
+}
+
+/* 眨眼：位圖無法局部眨眼，改為快速左右輕晃（換來陪伴感） */
+#panda.blink { animation: pBlink 3.2s ease-in-out; }
+@keyframes pBlink {
+  0%, 100% { transform: rotate(0deg); }
+  12% { transform: rotate(-2.5deg); }
+  24% { transform: rotate(2.5deg); }
+  36% { transform: rotate(-1.5deg); }
+  48% { transform: rotate(0deg); }
+}
+
+/* 招手：整體左右輕擺（像在揮手打招呼） */
+#panda.wave { animation: pWave 3.2s ease-in-out; }
+@keyframes pWave {
+  0%, 100% { transform: rotate(0deg); }
+  15% { transform: rotate(-5deg); }
+  30% { transform: rotate(4deg); }
+  45% { transform: rotate(-5deg); }
+  60% { transform: rotate(4deg); }
+  75% { transform: rotate(-3deg); }
+}
+
+/* 點頭：上下小幅彈跳 */
+#panda.nod { animation: pNod 3.2s ease-in-out; }
+@keyframes pNod {
+  0%, 100% { transform: translateY(0); }
+  18% { transform: translateY(4px); }
+  36% { transform: translateY(0); }
+  54% { transform: translateY(3.5px); }
+  72% { transform: translateY(0); }
+}
+
+@media (max-width: 760px) {
+  .panda-companion { width: 104px; height: 104px; right: 12px; bottom: 12px; }
+  .tbtn { width: 54px; height: 54px; font-size: 21px; }
+  .tbtn.wide { width: 118px; }
+}
+
+/* ---------------- 資源加載閘門（進遊戲先把開場媒體轉成 blob） ---------------- */
+.preload-gate {
+  position: fixed; inset: 0; z-index: 90;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 14px; padding: 24px;
+  background: linear-gradient(180deg, #eaf4e4 0%, #d9ecd2 100%);
+}
+.preload-gate.hidden { display: none; }
+.preload-gate .pg-panda {
+  width: 132px; height: 132px; object-fit: cover;
+  border-radius: 24px; background: #fbf8f0;
+  box-shadow: 0 10px 24px rgba(20,45,32,.32), 0 0 0 4px rgba(255,255,255,.14);
+  animation: pgBreathe 2.8s ease-in-out infinite;
+}
+@keyframes pgBreathe {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-4px) scale(1.015); }
+}
+.preload-gate .pg-title { font-size: 16px; color: #24432e; font-weight: 600; }
+.preload-gate .pg-track {
+  width: min(320px, 72vw); height: 12px; border-radius: 999px;
+  background: rgba(47,122,73,.18); overflow: hidden;
+}
+.preload-gate .pg-fill {
+  height: 100%; width: 0%; border-radius: 999px;
+  background: linear-gradient(90deg, #57b26a, #2f7a49);
+  transition: width .25s ease;
+}
+.preload-gate .pg-count { font-size: 12px; color: #4c6b55; font-variant-numeric: tabular-nums; }
+
+/* 閘門上的「開始冒險」按鈕：移動端必須留一次真實點擊來解鎖有聲播放 */
+.preload-gate .pg-go {
+  margin-top: 8px; padding: 13px 38px; font-size: 17px; font-weight: 700; letter-spacing: 1px;
+  color: #fff; background: linear-gradient(135deg, #57b26a, #2f7a49);
+  border: none; border-radius: 999px; cursor: pointer;
+  box-shadow: 0 6px 16px rgba(47,122,73,.35);
+  transition: transform .12s ease;
+}
+.preload-gate .pg-go:active { transform: scale(.96); }
+.preload-gate .pg-go.hidden { display: none; }
+
+/* ---------------- HUD 右上角音效開關（音樂 + 激勵音效） ---------------- */
+.hud-sound {
+  flex: none; width: 30px; height: 30px; padding: 0;
+  font-size: 15px; line-height: 1;
+  background: rgba(255,255,255,.16); color: #fff;
+  border: 1px solid rgba(255,255,255,.35); border-radius: 999px;
+  cursor: pointer; display: inline-flex; align-items: center; justify-content: center;
+}
+.hud-sound:active { transform: scale(.92); }
+@media (orientation: portrait) {
+  .hud-sound { width: 28px; height: 28px; font-size: 13px; }
+}
+
+/* HUD 容器是 pointer-events:none（避免擋住畫布點擊），按鈕必須單獨恢復可點 */
+.hud .hud-sound { pointer-events: auto; }

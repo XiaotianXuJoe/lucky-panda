@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>幸運熊貓 · 注意力訓練</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%233f9a5f'/><circle cx='10' cy='11' r='4' fill='%23fff'/><circle cx='22' cy='11' r='4' fill='%23fff'/><circle cx='10' cy='11' r='2' fill='%23223'/><circle cx='22' cy='11' r='2' fill='%23223'/><circle cx='16' cy='20' r='3' fill='%23fff'/></svg>">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo">
+    <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true">
+      <circle cx="16" cy="16" r="15" fill="#3f9a5f"/>
+      <circle cx="9.5" cy="10.5" r="4.6" fill="#fff"/><circle cx="22.5" cy="10.5" r="4.6" fill="#fff"/>
+      <circle cx="9.5" cy="10.5" r="2.2" fill="#22302a"/><circle cx="22.5" cy="10.5" r="2.2" fill="#22302a"/>
+      <ellipse cx="16" cy="20.5" rx="4" ry="3" fill="#fff"/>
+      <circle cx="16" cy="19.6" r="1.5" fill="#22302a"/>
+    </svg>
+    <span>幸運熊貓</span>
+  </div>
+  <div class="spacer"></div>
+  <div class="who" id="who"></div>
+  <button class="btn btn-sm btn-ghost hidden" id="btnLogout">退出</button>
+</div>
+
+<div class="wrap">
+
+  <!-- ============ 登錄 ============ -->
+  <section id="viewLogin">
+    <div class="hero">
+      <img class="panda-badge panda-photo" src="/play/assets/panda/panda-pose-wave.jpeg" alt="幸運熊貓吉祥物">
+      <h1>幸運熊貓 · 注意力訓練</h1>
+      <p>輸入小朋友的編號和姓氏，開始今天的森林冒險</p>
+    </div>
+
+    <div class="card login-box">
+      <div class="msg" id="loginMsg"></div>
+      <form id="loginForm" autocomplete="off">
+        <div class="field">
+          <label for="lgId1">被試編號（4 位數字）</label>
+          <input type="text" id="lgId1" inputmode="numeric" maxlength="4" placeholder="例如 0201">
+        </div>
+        <div class="field">
+          <label for="lgId2">請再輸入一次編號</label>
+          <input type="text" id="lgId2" inputmode="numeric" maxlength="4" placeholder="再輸一次，防止手滑">
+        </div>
+        <div class="field">
+          <label for="lgSurname">兒童姓氏</label>
+          <input type="text" id="lgSurname" maxlength="4" placeholder="例如 張">
+          <div class="hint">複姓（如「歐陽」）請填完整兩個字的姓</div>
+        </div>
+        <button class="btn btn-lg" type="submit" style="width:100%">登 錄</button>
+      </form>
+      <p class="center muted" style="margin:16px 0 0">
+        還沒有編號？<a href="#/register" id="goRegister">在這裡登記</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 登記 ============ -->
+  <section id="viewRegister" class="hidden">
+    <div class="card">
+      <h2>小朋友登記</h2>
+      <div class="sub">請填寫真實信息，用於訓練記錄和家長提醒</div>
+      <div class="msg" id="regMsg"></div>
+      <form id="regForm" autocomplete="off">
+        <div class="field">
+          <label for="rgId">被試編號（4 位數字）</label>
+          <input type="text" id="rgId" inputmode="numeric" maxlength="4" placeholder="例如 0201">
+          <div class="hint">編號由研究人員發放；幸運熊貓建議使用 02xx 號段</div>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="rgName">兒童姓名（全名）</label>
+            <input type="text" id="rgName" maxlength="12" placeholder="例如 張小寶">
+          </div>
+          <div class="field">
+            <label for="rgGender">性別</label>
+            <select id="rgGender">
+              <option value="">請選擇</option>
+              <option value="男">男</option>
+              <option value="女">女</option>
+            </select>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="rgAge">年齡（選填）</label>
+            <input type="number" id="rgAge" min="0" max="18" placeholder="0-18">
+          </div>
+          <div class="field">
+            <label for="rgEmail">家長郵箱（選填，用於提醒）</label>
+            <input type="email" id="rgEmail" placeholder="parent@example.com">
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn" type="submit">登記並開始</button>
+          <a class="btn btn-ghost" href="#/login">返回登錄</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ 已登錄首頁（需求6 精簡：居中單卡 hero，無成績/記錄區） ============ -->
+  <section id="viewHome" class="hidden">
+    <div class="card">
+      <img class="panda-photo" src="/play/assets/panda/panda-pose-cheer.jpeg" alt="幸運熊貓為你加油">
+      <h2 id="hmTitle">你好！</h2>
+      <div class="sub">今天的森林冒險約 21 分鐘，包含三段小遊戲和中間的故事動畫</div>
+      <!-- 資源預加載進度（登錄後開始拉第一階段視頻+全部配音，完成才能開始訓練） -->
+      <div class="pre-box" id="preBox">
+        <div class="pre-label" id="preLabel">正在為小朋友準備森林冒險…</div>
+        <div class="pre-track"><div class="pre-fill" id="preFill"></div></div>
+        <div class="pre-count" id="preCount">正在清點資源…</div>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-lg" id="btnStart">開始今天的訓練</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 修改資料 ============ -->
+  <section id="viewProfile" class="hidden">
+    <div class="card">
+      <h2>修改資料</h2>
+      <div class="sub">編號不可自行修改；如需變更請聯繫研究人員</div>
+      <div class="msg" id="pfMsg"></div>
+      <form id="pfForm" autocomplete="off">
+        <div class="row2">
+          <div class="field">
+            <label for="pfName">兒童姓名</label>
+            <input type="text" id="pfName" maxlength="12">
+          </div>
+          <div class="field">
+            <label for="pfGender">性別</label>
+            <select id="pfGender"><option value="男">男</option><option value="女">女</option></select>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="pfAge">年齡</label>
+            <input type="number" id="pfAge" min="0" max="18">
+          </div>
+          <div class="field">
+            <label for="pfEmail">家長郵箱</label>
+            <input type="email" id="pfEmail">
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn" type="submit">保存</button>
+          <a class="btn btn-ghost" href="#/home">返回</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/preload.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>

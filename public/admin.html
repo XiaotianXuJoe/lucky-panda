@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>幸运熊猫 · 管理后台</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo">
+    <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true">
+      <circle cx="16" cy="16" r="15" fill="#3f9a5f"/>
+      <circle cx="9.5" cy="10.5" r="4.6" fill="#fff"/><circle cx="22.5" cy="10.5" r="4.6" fill="#fff"/>
+      <circle cx="9.5" cy="10.5" r="2.2" fill="#22302a"/><circle cx="22.5" cy="10.5" r="2.2" fill="#22302a"/>
+      <ellipse cx="16" cy="20.5" rx="4" ry="3" fill="#fff"/>
+    </svg>
+    <span>幸运熊猫 · 管理后台</span>
+  </div>
+  <div class="spacer"></div>
+  <button class="btn btn-sm btn-ghost hidden" id="btnLogout">退出</button>
+  <a class="btn btn-sm btn-ghost" href="/">返回首页</a>
+</div>
+
+<div class="wrap-wide">
+
+  <!-- 登录 -->
+  <div class="card login-box" id="viewLogin">
+    <h2 class="center">管理员登录</h2>
+    <div class="msg" id="loginMsg"></div>
+    <form id="loginForm" autocomplete="off">
+      <div class="field">
+        <label for="adUser">用户名</label>
+        <input type="text" id="adUser" value="admin" autocomplete="username">
+      </div>
+      <div class="field">
+        <label for="adPass">密码</label>
+        <input type="password" id="adPass" autocomplete="current-password">
+      </div>
+      <button class="btn" type="submit" style="width:100%">登 录</button>
+    </form>
+  </div>
+
+  <!-- 后台主体 -->
+  <div id="viewMain" class="hidden">
+
+    <div class="stats" id="overview"></div>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="tabUsers">用户</button>
+      <button class="tab" data-tab="tabSessions">会话</button>
+      <button class="tab" data-tab="tabRemind">提醒</button>
+      <button class="tab" data-tab="tabImport">批量导入</button>
+    </div>
+
+    <!-- 用户 -->
+    <div class="card" id="tabUsers">
+      <div class="btn-row" style="margin-bottom:14px">
+        <input type="text" id="userSearch" placeholder="搜索编号 / 姓名 / 邮箱" style="max-width:280px">
+        <button class="btn btn-sm" id="btnRefreshUsers">刷新</button>
+        <div class="spacer" style="flex:1"></div>
+        <a class="btn btn-sm btn-ghost" href="/api/admin/export/users.csv" target="_blank">导出用户 CSV</a>
+      </div>
+      <div class="tablebox">
+        <table id="usersTable">
+          <thead>
+            <tr>
+              <th>编号</th><th>姓名</th><th>性别</th><th>年龄</th><th>邮箱</th>
+              <th class="num">会话</th><th class="num">总时长</th><th class="num">水晶</th>
+              <th>最近训练</th><th class="num">未训练</th><th>提醒</th><th>操作</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="muted" id="usersEmpty" style="display:none;margin-top:12px">暂无用户。</p>
+    </div>
+
+    <!-- 会话 -->
+    <div class="card hidden" id="tabSessions">
+      <div class="btn-row" style="margin-bottom:14px">
+        <input type="text" id="sessPid" placeholder="按编号筛选（留空为全部）" style="max-width:220px">
+        <button class="btn btn-sm" id="btnRefreshSessions">刷新</button>
+        <div class="spacer" style="flex:1"></div>
+        <a class="btn btn-sm btn-ghost" href="/api/admin/export/sessions.csv" target="_blank">导出会话 CSV</a>
+      </div>
+      <div class="tablebox">
+        <table id="sessionsTable">
+          <thead>
+            <tr>
+              <th>编号</th><th>姓名</th><th>开始时间</th>
+              <th class="num">第1段</th><th class="num">第2段</th><th class="num">第3段</th>
+              <th class="num">训练总时长</th><th class="num">故事动画</th><th class="num">切后台</th>
+              <th class="num">水晶</th><th>到达</th><th>状态</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="muted" id="sessionsEmpty" style="display:none;margin-top:12px">暂无会话。</p>
+    </div>
+
+    <!-- 提醒 -->
+    <div class="card hidden" id="tabRemind">
+      <h2>家长提醒</h2>
+      <div class="sub">连续 3 天（72 小时）以上未参与或未完成训练的小朋友，系统会通过邮件提醒家长。自动发送窗口为北京时间 09:00–09:29，每天至多一次。</div>
+      <div class="msg" id="remindMsg"></div>
+      <div class="btn-row">
+        <button class="btn" id="btnSendReminders">立即发送提醒邮件</button>
+        <button class="btn btn-ghost" id="btnRefreshOverview">刷新状态</button>
+      </div>
+      <div id="remindResult" style="margin-top:14px"></div>
+    </div>
+
+    <!-- 导入 -->
+    <div class="card hidden" id="tabImport">
+      <h2>批量导入用户</h2>
+      <div class="sub">一行一个用户，字段用逗号分隔：<code>编号,姓名,性别,年龄,邮箱</code>（年龄和邮箱可留空）。单次最多 500 行。</div>
+      <div class="msg" id="importMsg"></div>
+      <div class="field">
+        <textarea id="importText" rows="10" placeholder="0201,张小宝,男,7,parent@example.com&#10;0202,李小明,女,8,"></textarea>
+      </div>
+      <div class="btn-row">
+        <button class="btn" id="btnImport">导入</button>
+      </div>
+      <div id="importResult" style="margin-top:14px"></div>
+    </div>
+
+    <!-- 用户详情抽屉 -->
+    <div class="card hidden" id="userDetail">
+      <div class="btn-row" style="margin-bottom:10px">
+        <h2 style="margin:0" id="udTitle">用户详情</h2>
+        <div class="spacer" style="flex:1"></div>
+        <button class="btn btn-sm btn-ghost" id="btnCloseDetail">收起</button>
+      </div>
+      <div class="stats" id="udStats"></div>
+      <h3 style="font-size:16px;margin:18px 0 8px">每日训练（北京时间）</h3>
+      <div class="tablebox">
+        <table id="udDaily"><thead><tr>
+          <th>日期</th><th class="num">第1段</th><th class="num">第2段</th><th class="num">第3段</th>
+          <th class="num">总时长</th><th class="num">水晶</th><th class="num">次数</th>
+        </tr></thead><tbody></tbody></table>
+      </div>
+      <h3 style="font-size:16px;margin:18px 0 8px">编辑资料</h3>
+      <div class="msg" id="udMsg"></div>
+      <form id="udForm">
+        <div class="row2">
+          <div class="field"><label>编号</label><input type="text" id="udId" maxlength="4"></div>
+          <div class="field"><label>姓名</label><input type="text" id="udName" maxlength="12"></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label>性别</label><select id="udGender"><option>男</option><option>女</option></select></div>
+          <div class="field"><label>年龄</label><input type="number" id="udAge" min="0" max="18"></div>
+        </div>
+        <div class="field"><label>家长邮箱</label><input type="email" id="udEmail"></div>
+        <div class="btn-row">
+          <button class="btn" type="submit">保存</button>
+          <button class="btn btn-danger" type="button" id="btnDeleteUser">删除该用户</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/admin.js"></script>
+</body>
+</html>

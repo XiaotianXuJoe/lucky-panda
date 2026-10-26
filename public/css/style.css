@@ -1,0 +1,356 @@
+/* 幸運熊貓 · ADHD 訓練版 —— 全局樣式（淺色主題，面向兒童） */
+
+:root {
+  --bg: #f4f8f4;
+  --card: #ffffff;
+  --ink: #22302a;
+  --ink-soft: #5d6f66;
+  --line: #dfe8e2;
+  --brand: #3f9a5f;
+  --brand-dark: #2f7a49;
+  --brand-soft: #e8f5ec;
+  --warn: #d97706;
+  --danger: #c2410c;
+  --crystal: #2bb3d4;
+  --radius: 14px;
+  --shadow: 0 2px 10px rgba(34, 48, 42, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+a { color: var(--brand-dark); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.wrap { max-width: 920px; margin: 0 auto; padding: 24px 20px 64px; }
+.wrap-wide { max-width: 1180px; margin: 0 auto; padding: 24px 20px 64px; }
+
+/* ---------- 頂部 ---------- */
+.topbar {
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.topbar .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; }
+.topbar .spacer { flex: 1; }
+.topbar .who { color: var(--ink-soft); font-size: 14px; }
+
+/* ---------- 卡片 ---------- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px;
+  margin-bottom: 18px;
+}
+.card h2 { margin: 0 0 6px; font-size: 19px; }
+.card .sub { color: var(--ink-soft); font-size: 14px; margin-bottom: 16px; }
+
+/* ---------- 表單 ---------- */
+.field { margin-bottom: 14px; }
+.field label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+.field .hint { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
+input[type="text"], input[type="password"], input[type="number"], input[type="email"], select, textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: inherit;
+  background: #fff;
+  color: var(--ink);
+}
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--brand); outline-offset: 1px; border-color: var(--brand); }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 640px) { .row2 { grid-template-columns: 1fr; } }
+
+/* ---------- 按鈕 ---------- */
+.btn {
+  display: inline-block;
+  padding: 11px 22px;
+  border: none;
+  border-radius: 10px;
+  background: var(--brand);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background .15s;
+}
+.btn:hover { background: var(--brand-dark); }
+.btn:disabled { background: #a8bdb0; cursor: not-allowed; }
+.btn-lg { padding: 15px 34px; font-size: 19px; border-radius: 12px; }
+.btn-ghost { background: #fff; color: var(--brand-dark); border: 1px solid var(--brand); }
+.btn-ghost:hover { background: var(--brand-soft); }
+.btn-sm { padding: 6px 13px; font-size: 14px; border-radius: 8px; }
+.btn-danger { background: var(--danger); }
+.btn-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+
+/* ---------- 提示 ---------- */
+.msg {
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  margin-bottom: 14px;
+  display: none;
+}
+.msg.show { display: block; }
+.msg.err { background: #fdecea; color: #8c2f13; border: 1px solid #f5c6c0; }
+.msg.ok { background: var(--brand-soft); color: var(--brand-dark); border: 1px solid #bfe3cb; }
+.msg.info { background: #eef4fb; color: #1f4e87; border: 1px solid #c9dcf2; }
+
+/* ---------- 首頁 hero ---------- */
+.hero { text-align: center; padding: 34px 20px 26px; }
+.hero h1 { font-size: 30px; margin: 0 0 10px; }
+.hero p { color: var(--ink-soft); margin: 0 0 22px; }
+.panda-badge { width: 96px; height: 96px; margin: 0 auto 12px; display: block; }
+
+/* AI 生成的熊貓形象（方形照片卡風格） */
+.panda-photo { width: 128px; height: 128px; border-radius: 24px; object-fit: cover; box-shadow: 0 8px 22px rgba(30, 60, 45, .18); }
+.panda-inline { float: right; width: 84px; height: 84px; border-radius: 16px; object-fit: cover; margin: -6px 0 8px 14px; box-shadow: 0 5px 14px rgba(30, 60, 45, .15); }
+.finish-panda { width: 150px; height: 150px; border-radius: 26px; object-fit: cover; display: block; margin: 0 auto 4px; box-shadow: 0 10px 26px rgba(0, 0, 0, .4); }
+
+/* ---------- 表格 ---------- */
+.tablebox { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { padding: 9px 11px; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap; }
+th { background: #f7faf8; font-weight: 600; color: var(--ink-soft); }
+tbody tr:hover { background: #fafcfb; }
+td.num, th.num { text-align: right; }
+
+/* ---------- 後臺 ---------- */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 18px; }
+.stat {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 14px 16px; box-shadow: var(--shadow);
+}
+.stat .k { font-size: 13px; color: var(--ink-soft); }
+.stat .v { font-size: 24px; font-weight: 700; margin-top: 2px; }
+.tabs { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.tab {
+  padding: 8px 16px; border-radius: 999px; border: 1px solid var(--line);
+  background: #fff; cursor: pointer; font-size: 14px; font-family: inherit; color: var(--ink);
+}
+.tab.active { background: var(--brand); border-color: var(--brand); color: #fff; font-weight: 600; }
+.tag { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 12px; }
+.tag.warn { background: #fef3c7; color: #92400e; }
+.tag.ok { background: var(--brand-soft); color: var(--brand-dark); }
+.tag.grey { background: #eef1ef; color: var(--ink-soft); }
+
+.login-box { max-width: 380px; margin: 60px auto; }
+
+/* ---------- 玩家端首頁（需求6 精簡：雙卡列表 → 居中單卡 hero） ---------- */
+#viewHome .card {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 28px 24px;
+  text-align: center;
+}
+#viewHome .card .panda-photo { display: block; margin: 0 auto 12px; }
+#viewHome .card h2 { font-size: 20px; }
+#viewHome .card .sub { margin-bottom: 0; }
+#viewHome .card .btn-row { flex-direction: column; align-items: center; justify-content: center; gap: 0; }
+#viewHome .card .btn-lg { margin-top: 20px; }
+@media (max-width: 640px) {
+  #viewHome .card { max-width: 100%; padding: 20px 16px; }
+}
+
+/* ---------------- 首頁資源預加載進度條 ==================== */
+.pre-box { margin-top: 18px; padding: 14px 16px; border-radius: 14px; background: #f2f7ef; }
+.pre-box .pre-label { font-size: 13px; color: var(--ink, #243); margin-bottom: 10px; }
+.pre-box .pre-label.warn { color: #b25f00; }
+.pre-track { height: 10px; border-radius: 999px; background: #dde8d6; overflow: hidden; }
+.pre-fill {
+  height: 100%; width: 0%; border-radius: 999px;
+  background: linear-gradient(90deg, #57b26a, #2f7a49);
+  transition: width .25s ease;
+}
+.pre-count { margin-top: 8px; font-size: 12px; color: var(--ink-soft, #5a6b5e); font-variant-numeric: tabular-nums; }
+.pre-box.pre-done .pre-fill { background: #2f7a49; }
+
+/* ---------- 遊戲頁 ---------- */
+.game-root { position: fixed; inset: 0; background: #0f1c17; overflow: hidden; }
+.game-stage { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+#gameCanvas { display: block; background: #16281f; max-width: 100%; max-height: 100%; }
+
+.hud {
+  position: absolute; top: 0; left: 0; right: 0;
+  display: flex; align-items: center; gap: 16px;
+  padding: 10px 16px;
+  background: linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,0));
+  color: #fff; font-size: 15px; z-index: 10; pointer-events: none;
+}
+.hud .crystals { display: flex; gap: 4px; align-items: center; }
+.hud .crystal-dot {
+  width: 16px; height: 20px;
+  background: rgba(255,255,255,.18);
+  clip-path: polygon(50% 0%, 100% 32%, 78% 100%, 22% 100%, 0% 32%);
+}
+.hud .crystal-dot.on { background: var(--crystal); box-shadow: 0 0 8px rgba(43,179,212,.9); }
+.hud .spacer { flex: 1; }
+.hud .timer { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 18px; }
+.hud .stage-label { background: rgba(255,255,255,.16); padding: 3px 12px; border-radius: 999px; font-size: 14px; }
+
+/* ---------- 豎屏（手機豎握）：HUD 收窄 + 畫布鋪滿其下區域 ----------
+ * 邏輯解析度由 main.js 的 syncViewport 按視口比例切換（600 × 視口比例高），
+ * 這裡只處理 DOM 層的空間分配與安全區。
+ * D1：375 寬下單行放不下全部信息，HUD 允許換行兩行；
+ * 階段名/關卡標籤禁止縮略成省略號（完整文字換到第二行），
+ * spacer 豎屏不再需要（換行後它佔一整行反而浪費）。HUD 變高由
+ * applyStageInset 按實測高度自動避讓，無需寫死。 */
+@media (orientation: portrait) {
+  .hud {
+    flex-wrap: wrap;
+    gap: 6px 8px;
+    padding: calc(8px + env(safe-area-inset-top)) 10px 8px;
+    font-size: 13px;
+  }
+  .hud .spacer { display: none; }
+  .hud .stage-label { flex: 0 0 auto; white-space: nowrap; font-size: 12px; padding: 2px 8px; }
+  .hud .timer { font-size: 16px; }
+  .hud .crystals { gap: 3px; }
+  .hud .crystal-dot { width: 13px; height: 16px; }
+  .game-stage { overflow: hidden; }
+}
+
+/* 故事動畫層 */
+.story-layer {
+  position: absolute; inset: 0; z-index: 30;
+  background: #0b1512;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  color: #fff; text-align: center; padding: 30px;
+}
+.story-art { width: min(560px, 86vw); height: min(300px, 46vh); margin-bottom: 18px; }
+.story-art-box {
+  position: relative; width: min(560px, 86vw); height: min(300px, 46vh);
+  margin-bottom: 18px; background: #0b1512; border-radius: 12px; overflow: hidden;
+}
+.story-loading {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+}
+.story-spin {
+  width: 42px; height: 42px; border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, .15); border-top-color: #ffd75e;
+  animation: storyspin 1s linear infinite;
+}
+@keyframes storyspin { to { transform: rotate(360deg); } }
+.story-video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; transition: opacity .6s ease; pointer-events: none;
+}
+.story-video.on { opacity: 1; }
+.story-text { font-size: clamp(16px, 2.4vw, 22px); line-height: 1.9; max-width: 620px; min-height: 3.8em; }
+.story-skip {
+  margin-top: 22px; background: rgba(255,255,255,.14); color: #fff;
+  border: 1px solid rgba(255,255,255,.35); padding: 8px 22px; border-radius: 999px;
+  cursor: pointer; font-size: 15px; font-family: inherit;
+}
+.story-skip:hover { background: rgba(255,255,255,.24); }
+
+/* 熊貓陪伴：圓角方形照片卡（不透明實心，無摳形） */
+.panda-companion {
+  position: absolute; right: 18px; bottom: 18px; z-index: 20;
+  width: 132px; height: 132px; pointer-events: none;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #fbf8f0;
+  border: 1px solid rgba(255,255,255,.75);
+  box-shadow: 0 10px 24px rgba(20,45,32,.32), 0 0 0 4px rgba(255,255,255,.14);
+}
+.panda-companion img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  user-select: none; -webkit-user-drag: none;
+}
+
+/* 講解層（遊戲背景 + 毛玻璃卡片） */
+.tutorial-layer {
+  position: absolute; inset: 0; z-index: 40; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; padding: 30px; text-align: center;
+}
+.tut-bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
+.tut-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(8, 18, 14, .42), rgba(8, 18, 14, .72));
+}
+.tut-card {
+  position: relative; z-index: 1; width: 100%; max-width: 660px;
+  background: rgba(10, 22, 17, .82);
+  border: 1px solid rgba(255, 255, 255, .16); border-radius: 22px;
+  padding: 64px 30px 24px; margin-top: 52px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .45);
+}
+@supports ((backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px))) {
+  .tut-card {
+    background: rgba(10, 22, 17, .55);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  }
+}
+.tut-panda {
+  width: 108px; height: 108px; border-radius: 50%; object-fit: cover;
+  display: block; margin: -158px auto 10px; background: #fff;
+  border: 4px solid rgba(255, 255, 255, .92);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .4);
+}
+.tut-tag {
+  display: inline-block; font-size: 13px; letter-spacing: .5px;
+  color: #ffd75e; background: rgba(255, 215, 94, .12);
+  border: 1px solid rgba(255, 215, 94, .38);
+  padding: 4px 14px; border-radius: 999px; margin-bottom: 8px;
+}
+.tutorial-layer h3 { font-size: 27px; margin: 0 0 6px; letter-spacing: 1px; }
+.tutorial-layer ol.rules {
+  list-style: none; counter-reset: r; padding: 0;
+  max-width: 560px; margin: 12px auto 18px; text-align: left;
+}
+.tutorial-layer ol.rules li {
+  counter-increment: r; display: flex; gap: 10px; align-items: flex-start;
+  margin-bottom: 9px; font-size: 15.5px; line-height: 1.75; color: rgba(255, 255, 255, .92);
+}
+.tutorial-layer ol.rules li::before {
+  content: counter(r); flex: 0 0 24px; width: 24px; height: 24px;
+  border-radius: 50%; background: rgba(255, 215, 94, .92); color: #3a2c07;
+  font-weight: 700; font-size: 13px;
+  display: flex; align-items: center; justify-content: center; margin-top: 3px;
+}
+
+/* 暫停遮罩 */
+.pause-layer {
+  position: absolute; inset: 0; z-index: 35;
+  background: rgba(8, 18, 14, .82);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  color: #fff; gap: 12px;
+}
+.pause-layer .big { font-size: 20px; font-weight: 700; }
+
+/* 結算層 */
+.finish-layer {
+  position: absolute; inset: 0; z-index: 45;
+  background: linear-gradient(160deg, #123024, #0b1512);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  color: #fff; gap: 14px; text-align: center; padding: 24px;
+}
+.finish-layer h2 { font-size: 28px; margin: 0; }
+.finish-layer .crystal-big { font-size: 40px; font-weight: 700; color: var(--crystal); }
+
+.hidden { display: none !important; }
+.center { text-align: center; }
+.muted { color: var(--ink-soft); font-size: 14px; }

@@ -1,0 +1,13 @@
+{
+  "name": "lucky-panda",
+  "version": "1.0.0",
+  "private": true,
+  "description": "幸运熊猫（ADHD 训练版）—— 零依赖 Node 服务 + 网页端训练游戏 + 家长邮件提醒",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

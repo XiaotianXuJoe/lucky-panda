@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
+<title>幸運熊貓 · 森林冒險</title>
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/play/css/play.css">
+</head>
+<body>
+
+<div class="game-root">
+
+  <div class="game-stage" id="gameStage">
+    <canvas id="gameCanvas"></canvas>
+  </div>
+
+  <!-- 頂部 HUD -->
+  <div class="hud">
+    <span class="stage-label" id="stageLabel">準備中</span>
+    <span class="stage-label hidden" id="levelTag">第 1 關</span>
+    <span class="spacer"></span>
+    <span class="crystals" id="crystals" title="已獲得的水晶"></span>
+    <span class="timer" id="timer">--:--</span>
+    <button class="hud-sound" id="btnSound" type="button" title="關閉音樂和音效">🔊</button>
+  </div>
+
+  <!-- 觸屏按鍵 -->
+  <div class="touch-pad" id="touchPad"></div>
+
+  <!-- 熊貓陪伴（動作只由真實世界時間觸發，與遊戲表現無關） -->
+  <div class="panda-companion">
+    <img id="panda" src="/play/assets/panda/panda-pose-wave.jpeg" alt="幸運熊貓" draggable="false">
+  </div>
+
+  <!-- 故事動畫 -->
+  <div class="story-layer hidden" id="storyLayer"></div>
+
+  <!-- 玩法講解 -->
+  <div class="tutorial-layer hidden" id="tutorialLayer"></div>
+
+  <!-- 暫停（切後臺） -->
+  <div class="pause-layer hidden" id="pauseLayer">
+    <div class="big">小熊貓在等你回來～</div>
+    <div class="muted" style="opacity:.85">回到這個頁面就會繼續（這段時間不計入訓練時長）</div>
+  </div>
+
+  <!-- 結算 -->
+  <div class="finish-layer hidden" id="finishLayer"></div>
+
+  <!-- 資源加載閘門：開場視頻+全部配音轉成 blob 後，移動端需點一次「開始冒險」解鎖音視頻播放 -->
+  <div class="preload-gate" id="preloadGate">
+    <img class="pg-panda" src="/play/assets/panda/panda-pose-wave.jpeg" alt="幸運熊貓">
+    <div class="pg-title">森林裡的小動物正在集合…</div>
+    <div class="pg-track"><div class="pg-fill" id="pgFill"></div></div>
+    <div class="pg-count" id="pgCount">正在清點資源…</div>
+    <button class="pg-go hidden" id="pgGo" type="button">開始冒險 ▶</button>
+  </div>
+
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/preload.js"></script>
+<script src="/play/js/sfx.js"></script>
+<script src="/play/js/speech.js"></script>
+<script src="/play/js/recorder.js"></script>
+<script src="/play/js/story.js"></script>
+<script src="/play/js/games.js"></script>
+<script src="/play/js/main.js"></script>
+</body>
+</html>

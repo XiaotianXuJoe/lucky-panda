@@ -1,0 +1,762 @@
+{
+ "intro-1": {
+  "file": "audio/intro-1.mp3",
+  "text": "在很远很远的地方，有一片美丽的森林。",
+  "chars": 18
+ },
+ "intro-2": {
+  "file": "audio/intro-2.mp3",
+  "text": "森林里住着许多小动物，还有闪闪发光的水晶。",
+  "chars": 21
+ },
+ "intro-3": {
+  "file": "audio/intro-3.mp3",
+  "text": "有一天，坏巫师出现了！",
+  "chars": 11
+ },
+ "intro-4": {
+  "file": "audio/intro-4.mp3",
+  "text": "他把所有的水晶都偷走了，森林变成了黑白色……",
+  "chars": 22
+ },
+ "intro-5": {
+  "file": "audio/intro-5.mp3",
+  "text": "小熊猫需要你的帮忙，一起把水晶找回来吧！",
+  "chars": 20
+ },
+ "story1-1-n0": {
+  "file": "audio/story1-1-n0.mp3",
+  "text": "太棒了！你找回了0颗水晶。",
+  "chars": 13
+ },
+ "story1-1-n1": {
+  "file": "audio/story1-1-n1.mp3",
+  "text": "太棒了！你找回了1颗水晶。",
+  "chars": 13
+ },
+ "story1-1-n2": {
+  "file": "audio/story1-1-n2.mp3",
+  "text": "太棒了！你找回了2颗水晶。",
+  "chars": 13
+ },
+ "story1-1-n3": {
+  "file": "audio/story1-1-n3.mp3",
+  "text": "太棒了！你找回了3颗水晶。",
+  "chars": 13
+ },
+ "story1-1-n4": {
+  "file": "audio/story1-1-n4.mp3",
+  "text": "太棒了！你找回了4颗水晶。",
+  "chars": 13
+ },
+ "story1-1-n5": {
+  "file": "audio/story1-1-n5.mp3",
+  "text": "太棒了！你找回了5颗水晶。",
+  "chars": 13
+ },
+ "story1-1-n6": {
+  "file": "audio/story1-1-n6.mp3",
+  "text": "太棒了！你找回了6颗水晶。",
+  "chars": 13
+ },
+ "story1-1-n7": {
+  "file": "audio/story1-1-n7.mp3",
+  "text": "太棒了！你找回了7颗水晶。",
+  "chars": 13
+ },
+ "story1-1-n8": {
+  "file": "audio/story1-1-n8.mp3",
+  "text": "太棒了！你找回了8颗水晶。",
+  "chars": 13
+ },
+ "story1-1-n9": {
+  "file": "audio/story1-1-n9.mp3",
+  "text": "太棒了！你找回了9颗水晶。",
+  "chars": 13
+ },
+ "story1-1-n10": {
+  "file": "audio/story1-1-n10.mp3",
+  "text": "太棒了！你找回了10颗水晶。",
+  "chars": 14
+ },
+ "story1-1-n11": {
+  "file": "audio/story1-1-n11.mp3",
+  "text": "太棒了！你找回了11颗水晶。",
+  "chars": 14
+ },
+ "story1-1-n12": {
+  "file": "audio/story1-1-n12.mp3",
+  "text": "太棒了！你找回了12颗水晶。",
+  "chars": 14
+ },
+ "story1-1-n13": {
+  "file": "audio/story1-1-n13.mp3",
+  "text": "太棒了！你找回了13颗水晶。",
+  "chars": 14
+ },
+ "story1-1-n14": {
+  "file": "audio/story1-1-n14.mp3",
+  "text": "太棒了！你找回了14颗水晶。",
+  "chars": 14
+ },
+ "story1-1-n15": {
+  "file": "audio/story1-1-n15.mp3",
+  "text": "太棒了！你找回了15颗水晶。",
+  "chars": 14
+ },
+ "story1-2": {
+  "file": "audio/story1-2.mp3",
+  "text": "森林的一角，重新有了颜色。",
+  "chars": 13
+ },
+ "story1-3": {
+  "file": "audio/story1-3.mp3",
+  "text": "坏巫师逃进了黑漆漆的山洞……",
+  "chars": 14
+ },
+ "story1-4": {
+  "file": "audio/story1-4.mp3",
+  "text": "我们追上去！",
+  "chars": 6
+ },
+ "story2-1-c0t0": {
+  "file": "audio/story2-1-c0t0.mp3",
+  "text": "又找回了0颗水晶，一共0颗！",
+  "chars": 14
+ },
+ "story2-1-c0t1": {
+  "file": "audio/story2-1-c0t1.mp3",
+  "text": "又找回了0颗水晶，一共1颗！",
+  "chars": 14
+ },
+ "story2-1-c0t2": {
+  "file": "audio/story2-1-c0t2.mp3",
+  "text": "又找回了0颗水晶，一共2颗！",
+  "chars": 14
+ },
+ "story2-1-c0t3": {
+  "file": "audio/story2-1-c0t3.mp3",
+  "text": "又找回了0颗水晶，一共3颗！",
+  "chars": 14
+ },
+ "story2-1-c0t4": {
+  "file": "audio/story2-1-c0t4.mp3",
+  "text": "又找回了0颗水晶，一共4颗！",
+  "chars": 14
+ },
+ "story2-1-c0t5": {
+  "file": "audio/story2-1-c0t5.mp3",
+  "text": "又找回了0颗水晶，一共5颗！",
+  "chars": 14
+ },
+ "story2-1-c0t6": {
+  "file": "audio/story2-1-c0t6.mp3",
+  "text": "又找回了0颗水晶，一共6颗！",
+  "chars": 14
+ },
+ "story2-1-c0t7": {
+  "file": "audio/story2-1-c0t7.mp3",
+  "text": "又找回了0颗水晶，一共7颗！",
+  "chars": 14
+ },
+ "story2-1-c0t8": {
+  "file": "audio/story2-1-c0t8.mp3",
+  "text": "又找回了0颗水晶，一共8颗！",
+  "chars": 14
+ },
+ "story2-1-c0t9": {
+  "file": "audio/story2-1-c0t9.mp3",
+  "text": "又找回了0颗水晶，一共9颗！",
+  "chars": 14
+ },
+ "story2-1-c0t10": {
+  "file": "audio/story2-1-c0t10.mp3",
+  "text": "又找回了0颗水晶，一共10颗！",
+  "chars": 15
+ },
+ "story2-1-c0t11": {
+  "file": "audio/story2-1-c0t11.mp3",
+  "text": "又找回了0颗水晶，一共11颗！",
+  "chars": 15
+ },
+ "story2-1-c0t12": {
+  "file": "audio/story2-1-c0t12.mp3",
+  "text": "又找回了0颗水晶，一共12颗！",
+  "chars": 15
+ },
+ "story2-1-c0t13": {
+  "file": "audio/story2-1-c0t13.mp3",
+  "text": "又找回了0颗水晶，一共13颗！",
+  "chars": 15
+ },
+ "story2-1-c0t14": {
+  "file": "audio/story2-1-c0t14.mp3",
+  "text": "又找回了0颗水晶，一共14颗！",
+  "chars": 15
+ },
+ "story2-1-c0t15": {
+  "file": "audio/story2-1-c0t15.mp3",
+  "text": "又找回了0颗水晶，一共15颗！",
+  "chars": 15
+ },
+ "story2-1-c1t0": {
+  "file": "audio/story2-1-c1t0.mp3",
+  "text": "又找回了1颗水晶，一共0颗！",
+  "chars": 14
+ },
+ "story2-1-c1t1": {
+  "file": "audio/story2-1-c1t1.mp3",
+  "text": "又找回了1颗水晶，一共1颗！",
+  "chars": 14
+ },
+ "story2-1-c1t2": {
+  "file": "audio/story2-1-c1t2.mp3",
+  "text": "又找回了1颗水晶，一共2颗！",
+  "chars": 14
+ },
+ "story2-1-c1t3": {
+  "file": "audio/story2-1-c1t3.mp3",
+  "text": "又找回了1颗水晶，一共3颗！",
+  "chars": 14
+ },
+ "story2-1-c1t4": {
+  "file": "audio/story2-1-c1t4.mp3",
+  "text": "又找回了1颗水晶，一共4颗！",
+  "chars": 14
+ },
+ "story2-1-c1t5": {
+  "file": "audio/story2-1-c1t5.mp3",
+  "text": "又找回了1颗水晶，一共5颗！",
+  "chars": 14
+ },
+ "story2-1-c1t6": {
+  "file": "audio/story2-1-c1t6.mp3",
+  "text": "又找回了1颗水晶，一共6颗！",
+  "chars": 14
+ },
+ "story2-1-c1t7": {
+  "file": "audio/story2-1-c1t7.mp3",
+  "text": "又找回了1颗水晶，一共7颗！",
+  "chars": 14
+ },
+ "story2-1-c1t8": {
+  "file": "audio/story2-1-c1t8.mp3",
+  "text": "又找回了1颗水晶，一共8颗！",
+  "chars": 14
+ },
+ "story2-1-c1t9": {
+  "file": "audio/story2-1-c1t9.mp3",
+  "text": "又找回了1颗水晶，一共9颗！",
+  "chars": 14
+ },
+ "story2-1-c1t10": {
+  "file": "audio/story2-1-c1t10.mp3",
+  "text": "又找回了1颗水晶，一共10颗！",
+  "chars": 15
+ },
+ "story2-1-c1t11": {
+  "file": "audio/story2-1-c1t11.mp3",
+  "text": "又找回了1颗水晶，一共11颗！",
+  "chars": 15
+ },
+ "story2-1-c1t12": {
+  "file": "audio/story2-1-c1t12.mp3",
+  "text": "又找回了1颗水晶，一共12颗！",
+  "chars": 15
+ },
+ "story2-1-c1t13": {
+  "file": "audio/story2-1-c1t13.mp3",
+  "text": "又找回了1颗水晶，一共13颗！",
+  "chars": 15
+ },
+ "story2-1-c1t14": {
+  "file": "audio/story2-1-c1t14.mp3",
+  "text": "又找回了1颗水晶，一共14颗！",
+  "chars": 15
+ },
+ "story2-1-c1t15": {
+  "file": "audio/story2-1-c1t15.mp3",
+  "text": "又找回了1颗水晶，一共15颗！",
+  "chars": 15
+ },
+ "story2-1-c2t0": {
+  "file": "audio/story2-1-c2t0.mp3",
+  "text": "又找回了2颗水晶，一共0颗！",
+  "chars": 14
+ },
+ "story2-1-c2t1": {
+  "file": "audio/story2-1-c2t1.mp3",
+  "text": "又找回了2颗水晶，一共1颗！",
+  "chars": 14
+ },
+ "story2-1-c2t2": {
+  "file": "audio/story2-1-c2t2.mp3",
+  "text": "又找回了2颗水晶，一共2颗！",
+  "chars": 14
+ },
+ "story2-1-c2t3": {
+  "file": "audio/story2-1-c2t3.mp3",
+  "text": "又找回了2颗水晶，一共3颗！",
+  "chars": 14
+ },
+ "story2-1-c2t4": {
+  "file": "audio/story2-1-c2t4.mp3",
+  "text": "又找回了2颗水晶，一共4颗！",
+  "chars": 14
+ },
+ "story2-1-c2t5": {
+  "file": "audio/story2-1-c2t5.mp3",
+  "text": "又找回了2颗水晶，一共5颗！",
+  "chars": 14
+ },
+ "story2-1-c2t6": {
+  "file": "audio/story2-1-c2t6.mp3",
+  "text": "又找回了2颗水晶，一共6颗！",
+  "chars": 14
+ },
+ "story2-1-c2t7": {
+  "file": "audio/story2-1-c2t7.mp3",
+  "text": "又找回了2颗水晶，一共7颗！",
+  "chars": 14
+ },
+ "story2-1-c2t8": {
+  "file": "audio/story2-1-c2t8.mp3",
+  "text": "又找回了2颗水晶，一共8颗！",
+  "chars": 14
+ },
+ "story2-1-c2t9": {
+  "file": "audio/story2-1-c2t9.mp3",
+  "text": "又找回了2颗水晶，一共9颗！",
+  "chars": 14
+ },
+ "story2-1-c2t10": {
+  "file": "audio/story2-1-c2t10.mp3",
+  "text": "又找回了2颗水晶，一共10颗！",
+  "chars": 15
+ },
+ "story2-1-c2t11": {
+  "file": "audio/story2-1-c2t11.mp3",
+  "text": "又找回了2颗水晶，一共11颗！",
+  "chars": 15
+ },
+ "story2-1-c2t12": {
+  "file": "audio/story2-1-c2t12.mp3",
+  "text": "又找回了2颗水晶，一共12颗！",
+  "chars": 15
+ },
+ "story2-1-c2t13": {
+  "file": "audio/story2-1-c2t13.mp3",
+  "text": "又找回了2颗水晶，一共13颗！",
+  "chars": 15
+ },
+ "story2-1-c2t14": {
+  "file": "audio/story2-1-c2t14.mp3",
+  "text": "又找回了2颗水晶，一共14颗！",
+  "chars": 15
+ },
+ "story2-1-c2t15": {
+  "file": "audio/story2-1-c2t15.mp3",
+  "text": "又找回了2颗水晶，一共15颗！",
+  "chars": 15
+ },
+ "story2-1-c3t0": {
+  "file": "audio/story2-1-c3t0.mp3",
+  "text": "又找回了3颗水晶，一共0颗！",
+  "chars": 14
+ },
+ "story2-1-c3t1": {
+  "file": "audio/story2-1-c3t1.mp3",
+  "text": "又找回了3颗水晶，一共1颗！",
+  "chars": 14
+ },
+ "story2-1-c3t2": {
+  "file": "audio/story2-1-c3t2.mp3",
+  "text": "又找回了3颗水晶，一共2颗！",
+  "chars": 14
+ },
+ "story2-1-c3t3": {
+  "file": "audio/story2-1-c3t3.mp3",
+  "text": "又找回了3颗水晶，一共3颗！",
+  "chars": 14
+ },
+ "story2-1-c3t4": {
+  "file": "audio/story2-1-c3t4.mp3",
+  "text": "又找回了3颗水晶，一共4颗！",
+  "chars": 14
+ },
+ "story2-1-c3t5": {
+  "file": "audio/story2-1-c3t5.mp3",
+  "text": "又找回了3颗水晶，一共5颗！",
+  "chars": 14
+ },
+ "story2-1-c3t6": {
+  "file": "audio/story2-1-c3t6.mp3",
+  "text": "又找回了3颗水晶，一共6颗！",
+  "chars": 14
+ },
+ "story2-1-c3t7": {
+  "file": "audio/story2-1-c3t7.mp3",
+  "text": "又找回了3颗水晶，一共7颗！",
+  "chars": 14
+ },
+ "story2-1-c3t8": {
+  "file": "audio/story2-1-c3t8.mp3",
+  "text": "又找回了3颗水晶，一共8颗！",
+  "chars": 14
+ },
+ "story2-1-c3t9": {
+  "file": "audio/story2-1-c3t9.mp3",
+  "text": "又找回了3颗水晶，一共9颗！",
+  "chars": 14
+ },
+ "story2-1-c3t10": {
+  "file": "audio/story2-1-c3t10.mp3",
+  "text": "又找回了3颗水晶，一共10颗！",
+  "chars": 15
+ },
+ "story2-1-c3t11": {
+  "file": "audio/story2-1-c3t11.mp3",
+  "text": "又找回了3颗水晶，一共11颗！",
+  "chars": 15
+ },
+ "story2-1-c3t12": {
+  "file": "audio/story2-1-c3t12.mp3",
+  "text": "又找回了3颗水晶，一共12颗！",
+  "chars": 15
+ },
+ "story2-1-c3t13": {
+  "file": "audio/story2-1-c3t13.mp3",
+  "text": "又找回了3颗水晶，一共13颗！",
+  "chars": 15
+ },
+ "story2-1-c3t14": {
+  "file": "audio/story2-1-c3t14.mp3",
+  "text": "又找回了3颗水晶，一共14颗！",
+  "chars": 15
+ },
+ "story2-1-c3t15": {
+  "file": "audio/story2-1-c3t15.mp3",
+  "text": "又找回了3颗水晶，一共15颗！",
+  "chars": 15
+ },
+ "story2-1-c4t0": {
+  "file": "audio/story2-1-c4t0.mp3",
+  "text": "又找回了4颗水晶，一共0颗！",
+  "chars": 14
+ },
+ "story2-1-c4t1": {
+  "file": "audio/story2-1-c4t1.mp3",
+  "text": "又找回了4颗水晶，一共1颗！",
+  "chars": 14
+ },
+ "story2-1-c4t2": {
+  "file": "audio/story2-1-c4t2.mp3",
+  "text": "又找回了4颗水晶，一共2颗！",
+  "chars": 14
+ },
+ "story2-1-c4t3": {
+  "file": "audio/story2-1-c4t3.mp3",
+  "text": "又找回了4颗水晶，一共3颗！",
+  "chars": 14
+ },
+ "story2-1-c4t4": {
+  "file": "audio/story2-1-c4t4.mp3",
+  "text": "又找回了4颗水晶，一共4颗！",
+  "chars": 14
+ },
+ "story2-1-c4t5": {
+  "file": "audio/story2-1-c4t5.mp3",
+  "text": "又找回了4颗水晶，一共5颗！",
+  "chars": 14
+ },
+ "story2-1-c4t6": {
+  "file": "audio/story2-1-c4t6.mp3",
+  "text": "又找回了4颗水晶，一共6颗！",
+  "chars": 14
+ },
+ "story2-1-c4t7": {
+  "file": "audio/story2-1-c4t7.mp3",
+  "text": "又找回了4颗水晶，一共7颗！",
+  "chars": 14
+ },
+ "story2-1-c4t8": {
+  "file": "audio/story2-1-c4t8.mp3",
+  "text": "又找回了4颗水晶，一共8颗！",
+  "chars": 14
+ },
+ "story2-1-c4t9": {
+  "file": "audio/story2-1-c4t9.mp3",
+  "text": "又找回了4颗水晶，一共9颗！",
+  "chars": 14
+ },
+ "story2-1-c4t10": {
+  "file": "audio/story2-1-c4t10.mp3",
+  "text": "又找回了4颗水晶，一共10颗！",
+  "chars": 15
+ },
+ "story2-1-c4t11": {
+  "file": "audio/story2-1-c4t11.mp3",
+  "text": "又找回了4颗水晶，一共11颗！",
+  "chars": 15
+ },
+ "story2-1-c4t12": {
+  "file": "audio/story2-1-c4t12.mp3",
+  "text": "又找回了4颗水晶，一共12颗！",
+  "chars": 15
+ },
+ "story2-1-c4t13": {
+  "file": "audio/story2-1-c4t13.mp3",
+  "text": "又找回了4颗水晶，一共13颗！",
+  "chars": 15
+ },
+ "story2-1-c4t14": {
+  "file": "audio/story2-1-c4t14.mp3",
+  "text": "又找回了4颗水晶，一共14颗！",
+  "chars": 15
+ },
+ "story2-1-c4t15": {
+  "file": "audio/story2-1-c4t15.mp3",
+  "text": "又找回了4颗水晶，一共15颗！",
+  "chars": 15
+ },
+ "story2-1-c5t0": {
+  "file": "audio/story2-1-c5t0.mp3",
+  "text": "又找回了5颗水晶，一共0颗！",
+  "chars": 14
+ },
+ "story2-1-c5t1": {
+  "file": "audio/story2-1-c5t1.mp3",
+  "text": "又找回了5颗水晶，一共1颗！",
+  "chars": 14
+ },
+ "story2-1-c5t2": {
+  "file": "audio/story2-1-c5t2.mp3",
+  "text": "又找回了5颗水晶，一共2颗！",
+  "chars": 14
+ },
+ "story2-1-c5t3": {
+  "file": "audio/story2-1-c5t3.mp3",
+  "text": "又找回了5颗水晶，一共3颗！",
+  "chars": 14
+ },
+ "story2-1-c5t4": {
+  "file": "audio/story2-1-c5t4.mp3",
+  "text": "又找回了5颗水晶，一共4颗！",
+  "chars": 14
+ },
+ "story2-1-c5t5": {
+  "file": "audio/story2-1-c5t5.mp3",
+  "text": "又找回了5颗水晶，一共5颗！",
+  "chars": 14
+ },
+ "story2-1-c5t6": {
+  "file": "audio/story2-1-c5t6.mp3",
+  "text": "又找回了5颗水晶，一共6颗！",
+  "chars": 14
+ },
+ "story2-1-c5t7": {
+  "file": "audio/story2-1-c5t7.mp3",
+  "text": "又找回了5颗水晶，一共7颗！",
+  "chars": 14
+ },
+ "story2-1-c5t8": {
+  "file": "audio/story2-1-c5t8.mp3",
+  "text": "又找回了5颗水晶，一共8颗！",
+  "chars": 14
+ },
+ "story2-1-c5t9": {
+  "file": "audio/story2-1-c5t9.mp3",
+  "text": "又找回了5颗水晶，一共9颗！",
+  "chars": 14
+ },
+ "story2-1-c5t10": {
+  "file": "audio/story2-1-c5t10.mp3",
+  "text": "又找回了5颗水晶，一共10颗！",
+  "chars": 15
+ },
+ "story2-1-c5t11": {
+  "file": "audio/story2-1-c5t11.mp3",
+  "text": "又找回了5颗水晶，一共11颗！",
+  "chars": 15
+ },
+ "story2-1-c5t12": {
+  "file": "audio/story2-1-c5t12.mp3",
+  "text": "又找回了5颗水晶，一共12颗！",
+  "chars": 15
+ },
+ "story2-1-c5t13": {
+  "file": "audio/story2-1-c5t13.mp3",
+  "text": "又找回了5颗水晶，一共13颗！",
+  "chars": 15
+ },
+ "story2-1-c5t14": {
+  "file": "audio/story2-1-c5t14.mp3",
+  "text": "又找回了5颗水晶，一共14颗！",
+  "chars": 15
+ },
+ "story2-1-c5t15": {
+  "file": "audio/story2-1-c5t15.mp3",
+  "text": "又找回了5颗水晶，一共15颗！",
+  "chars": 15
+ },
+ "story2-2": {
+  "file": "audio/story2-2.mp3",
+  "text": "山洞里的水晶也被你找回来了。",
+  "chars": 14
+ },
+ "story2-3": {
+  "file": "audio/story2-3.mp3",
+  "text": "坏巫师逃到了远处的花丛里。",
+  "chars": 13
+ },
+ "story2-4": {
+  "file": "audio/story2-4.mp3",
+  "text": "继续前进！",
+  "chars": 5
+ },
+ "ending-1-n0": {
+  "file": "audio/ending-1-n0.mp3",
+  "text": "水晶全部找回来了，一共0颗！",
+  "chars": 14
+ },
+ "ending-1-n1": {
+  "file": "audio/ending-1-n1.mp3",
+  "text": "水晶全部找回来了，一共1颗！",
+  "chars": 14
+ },
+ "ending-1-n2": {
+  "file": "audio/ending-1-n2.mp3",
+  "text": "水晶全部找回来了，一共2颗！",
+  "chars": 14
+ },
+ "ending-1-n3": {
+  "file": "audio/ending-1-n3.mp3",
+  "text": "水晶全部找回来了，一共3颗！",
+  "chars": 14
+ },
+ "ending-1-n4": {
+  "file": "audio/ending-1-n4.mp3",
+  "text": "水晶全部找回来了，一共4颗！",
+  "chars": 14
+ },
+ "ending-1-n5": {
+  "file": "audio/ending-1-n5.mp3",
+  "text": "水晶全部找回来了，一共5颗！",
+  "chars": 14
+ },
+ "ending-1-n6": {
+  "file": "audio/ending-1-n6.mp3",
+  "text": "水晶全部找回来了，一共6颗！",
+  "chars": 14
+ },
+ "ending-1-n7": {
+  "file": "audio/ending-1-n7.mp3",
+  "text": "水晶全部找回来了，一共7颗！",
+  "chars": 14
+ },
+ "ending-1-n8": {
+  "file": "audio/ending-1-n8.mp3",
+  "text": "水晶全部找回来了，一共8颗！",
+  "chars": 14
+ },
+ "ending-1-n9": {
+  "file": "audio/ending-1-n9.mp3",
+  "text": "水晶全部找回来了，一共9颗！",
+  "chars": 14
+ },
+ "ending-1-n10": {
+  "file": "audio/ending-1-n10.mp3",
+  "text": "水晶全部找回来了，一共10颗！",
+  "chars": 15
+ },
+ "ending-1-n11": {
+  "file": "audio/ending-1-n11.mp3",
+  "text": "水晶全部找回来了，一共11颗！",
+  "chars": 15
+ },
+ "ending-1-n12": {
+  "file": "audio/ending-1-n12.mp3",
+  "text": "水晶全部找回来了，一共12颗！",
+  "chars": 15
+ },
+ "ending-1-n13": {
+  "file": "audio/ending-1-n13.mp3",
+  "text": "水晶全部找回来了，一共13颗！",
+  "chars": 15
+ },
+ "ending-1-n14": {
+  "file": "audio/ending-1-n14.mp3",
+  "text": "水晶全部找回来了，一共14颗！",
+  "chars": 15
+ },
+ "ending-1-n15": {
+  "file": "audio/ending-1-n15.mp3",
+  "text": "水晶全部找回来了，一共15颗！",
+  "chars": 15
+ },
+ "ending-2": {
+  "file": "audio/ending-2.mp3",
+  "text": "坏巫师被打败了，森林恢复了色彩！",
+  "chars": 16
+ },
+ "ending-3": {
+  "file": "audio/ending-3.mp3",
+  "text": "小动物们都回来啦，它们一起说：谢谢你！",
+  "chars": 19
+ },
+ "ending-4": {
+  "file": "audio/ending-4.mp3",
+  "text": "谢谢参与！",
+  "chars": 5
+ },
+ "tut-jump-1": {
+  "file": "audio/tut-jump-1.mp3",
+  "text": "这一关叫跳跃水晶。你看，不同颜色的板子会从上面慢慢往下落。",
+  "chars": 29
+ },
+ "tut-jump-2": {
+  "file": "audio/tut-jump-2.mp3",
+  "text": "点屏幕的左边或者右边，就能控制水晶往那边跳。",
+  "chars": 22
+ },
+ "tut-jump-3": {
+  "file": "audio/tut-jump-3.mp3",
+  "text": "让水晶穿过和它一样颜色的板子，穿过去以后，水晶还会换一种颜色哦。",
+  "chars": 32
+ },
+ "tut-jump-4": {
+  "file": "audio/tut-jump-4.mp3",
+  "text": "一共穿对十五块板子就过关啦。",
+  "chars": 14
+ },
+ "tut-jump-5": {
+  "file": "audio/tut-jump-5.mp3",
+  "text": "要是碰到不一样的颜色也没关系，它只是轻轻提醒你一下，不扣分的，再来一次就好。",
+  "chars": 38
+ },
+ "tut-memory-1": {
+  "file": "audio/tut-memory-1.mp3",
+  "text": "这一关叫记忆翻牌。",
+  "chars": 9
+ },
+ "tut-memory-2": {
+  "file": "audio/tut-memory-2.mp3",
+  "text": "等一会儿，卡片会先全部亮出来，给你一点时间记住它们的位置。",
+  "chars": 29
+ },
+ "tut-memory-3": {
+  "file": "audio/tut-memory-3.mp3",
+  "text": "关卡越往后，给的时间越长：第一关 5 秒，之后每过一关多 5 秒，第五关有 25 秒。",
+  "chars": 43
+ },
+ "tut-memory-4": {
+  "file": "audio/tut-memory-4.mp3",
+  "text": "时间到了卡片会翻过去，接下来就要靠你的记忆力，找出两张一样的图案。",
+  "chars": 33
+ },
+ "tut-memory-5": {
+  "file": "audio/tut-memory-5.mp3",
+  "text": "全部配对成功就过关啦。",
+  "chars": 11
+ }
+}
